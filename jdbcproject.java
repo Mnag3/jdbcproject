@@ -13,8 +13,8 @@ class Worker
     static void insert() {
     	try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ahmadbasha","root","Password123");
-			PreparedStatement stmt = con.prepareStatement("insert into ahmad values(?,?,?,?,?)");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/varma","root","Password123");
+			PreparedStatement stmt = con.prepareStatement("insert into EMP values(?,?,?,?,?)");
 			Scanner sc=new Scanner(System.in);
 			
 			System.out.println("enter id:");
@@ -48,9 +48,9 @@ class Worker
     static void display() {
     	try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ahmadbasha","root","Password123");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/varma","root","Password123");
 			Statement stmt=con.createStatement();
-			ResultSet rs=stmt.executeQuery("select * from ahmad");
+			ResultSet rs=stmt.executeQuery("select * from EMP");
 			while(rs.next())
 			{
 				System.out.println(rs.getInt(1)+":"+rs.getString(2)+":"+rs.getInt(3)+":"+rs.getInt(4)+":"+rs.getString(5));
@@ -65,8 +65,8 @@ class Worker
     static void update() {
     	try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ahmadbasha","root","Password123");
-			PreparedStatement stmt = con.prepareStatement("update ahmad set salary=? where id=?");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/varma","root","Password123");
+			PreparedStatement stmt = con.prepareStatement("update EMP set salary=? where id=?");
 			Scanner sc=new Scanner(System.in);
 			
 			System.out.println("enter id:");
@@ -94,8 +94,8 @@ class Worker
     static void delete() {
     	try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ahmadbasha","root","Password123");
-			PreparedStatement stmt = con.prepareStatement("delete from ahmad where id=?");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/varma","root","Password123");
+			PreparedStatement stmt = con.prepareStatement("delete from EMP where id=?");
 			Scanner sc=new Scanner(System.in);
 			
 			System.out.println("enter id:");
